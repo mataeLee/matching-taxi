@@ -15,5 +15,5 @@
    
 <hr/>
 ## 협업   
-+ Git-flow 브랜치 전략 사용
-+ pull-request 방식으로 코드리뷰 진행
++ Git-flow 브랜치 전략 사용   
++ pull-request 방식으로 코드리뷰 진행   
