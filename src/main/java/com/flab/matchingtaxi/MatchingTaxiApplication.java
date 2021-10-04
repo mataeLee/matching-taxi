@@ -1,12 +1,12 @@
-package com.flab.matchingtexi;
+package com.flab.matchingtaxi;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class MatchingTexiApplication {
+public class MatchingTaxiApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(MatchingTexiApplication.class, args);
+		SpringApplication.run(MatchingTaxiApplication.class, args);
 	}
 }

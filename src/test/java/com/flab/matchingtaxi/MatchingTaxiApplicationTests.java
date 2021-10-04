@@ -1,10 +1,10 @@
-package com.flab.matchingtexi;
+package com.flab.matchingtaxi;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class MatchingTexiApplicationTests {
+class MatchingTaxiApplicationTests {
 
 	@Test
 	void contextLoads() {
