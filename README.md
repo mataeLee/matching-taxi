@@ -45,6 +45,6 @@ ex) feature/{number}-{name}
 # Reference
    
 git
-- [Bitbucket git-flow tutorial](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow)
+- [Bitbucket git-flow tutorials](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow)
 - [좋은 커밋 작성법](https://meetup.toast.com/posts/106)
 
