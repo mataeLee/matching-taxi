@@ -40,10 +40,3 @@ ex) feature/{number}-{name}
 - 등록된 issue와 연결되도록 PR 작성
     
     `#{issueNumer} {issueTitleName}`
-
-# Reference
-   
-git
-- [Bitbucket git-flow tutorials](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow)
-- [좋은 커밋 작성법](https://meetup.toast.com/posts/106)
-
