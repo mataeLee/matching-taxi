@@ -34,7 +34,7 @@ ex) feature/{number}-{name}
 ### Issue Register
 - 해당되는 비즈니스 요구사항을 작성한다.
 - 기술적 목표의 어떤 부분인지 명시한다.
-- 개발내용들을 리스트로 정리하여 작성한다.
+- 개발 Task들을 리스트로 정리하여 작성한다.
 
 ### Pull Reqeust
 - 등록된 issue와 연결되도록 PR 작성
