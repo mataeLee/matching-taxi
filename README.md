@@ -9,6 +9,7 @@
 - SOA기반 서버 분리 형식의 서버 구조(MSA) 설계
    
 # 3. 서버 구조도
+![matching-taxi-architecture](https://user-images.githubusercontent.com/41102038/140643710-7013a4c6-f97e-4a0e-9c7f-7e4cdf52a8b6.PNG)
    
 # 4. 협업
 * Git-flow 브랜치 전략 적용
