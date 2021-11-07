@@ -24,13 +24,12 @@ ex) feature/{number}-{name}
 - 제목과 본문은 행을 나눠 분리하여 작성한다.
 - commit Type을 제목 서두에 적어 분별하기 쉽도록 작성한다.
 
-        feat : 기능
+        feat : 기능 개발 추가
         fix : 버그 수정
-        docs : 문서 수정
-        style : 서식 지정, 세미콜론 누락 등 코드 변경이 없는 경우
-        refactor : 코드 리팩터링
-        test : 누락된 테스트 코드를 추가할 때
-        chore : 잡일(?), 빌드 업무나 패키지 매니저 수정할 때
+        style : 코드 스타일 수정
+        refactor : 코드 리팩토링, 디자인 패턴 적용 등
+        comment : 주석 처리
+        test : 누락된 테스트 코드 추가
 
 ### Issue Register
 - 해당되는 비즈니스 요구사항을 작성한다.
