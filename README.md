@@ -1,6 +1,6 @@
 # 1. Background
 ### 실시간 택시승차를 위한 승객-기사 매칭 서비스 프로젝트  
-Documentation : [Notion](https://www.notion.so/Matching-Taxi-68790bcadf77457295d01dae390bded5)
+Documentation : [Notion](https://parallel-cornucopia-5d2.notion.site/Matching-Taxi-fd95f9208c6c4b1b9d6f2bc0e013552d)
    
 # 2. Goal
 - 동시접속 유저 10만명일 때 트래픽을 처리할 수 있는 서버 구조 설계
