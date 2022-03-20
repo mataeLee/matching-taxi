@@ -1,9 +1,13 @@
 package com.flab.matchingtaxi.service;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.node.ObjectNode;
+import com.flab.matchingtaxi.domain.CallRequest;
 import com.flab.matchingtaxi.model.RemoteMessage;
 import com.flab.matchingtaxi.std.MessagePayloadStandard;
 import com.flab.matchingtaxi.std.StompStandard;
 import lombok.extern.slf4j.Slf4j;
+import org.checkerframework.checker.units.qual.C;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.geo.Point;
 import org.springframework.messaging.simp.SimpMessageSendingOperations;
@@ -18,6 +22,7 @@ public class RemoteMessageService {
     @Autowired
     private SimpMessageSendingOperations messagingTemplate;
 
+
     // 발행
     public void publish_stomp(RemoteMessage message) {
         String receiverId = message.getReceiver();
@@ -28,47 +33,72 @@ public class RemoteMessageService {
 
     // extract
     public Boolean extractState(RemoteMessage message) {
-        Map<String, String> map = message.getPayload();
+        Map<String, Object> map = message.getPayload();
         if(!map.containsKey(MessagePayloadStandard.STATE)) return null;
-        return Boolean.parseBoolean(map.get(MessagePayloadStandard.STATE));
+        return (Boolean)map.get(MessagePayloadStandard.STATE);
     }
 
     public String extractTopic(RemoteMessage message){
-        Map<String, String> map = message.getPayload();
+        Map<String, Object> map = message.getPayload();
         if(!map.containsKey(MessagePayloadStandard.TOPIC)) return null;
-        return map.get(MessagePayloadStandard.TOPIC);
+        return (String)map.get(MessagePayloadStandard.TOPIC);
     }
 
-    public Boolean extractResponse(RemoteMessage message) {
-        Map<String, String> map = message.getPayload();
-        if(!map.containsKey(MessagePayloadStandard.RESPONSE)) return null;
-        return Boolean.parseBoolean(map.get(MessagePayloadStandard.RESPONSE));
+    public Boolean extractCallResponse(RemoteMessage message) {
+        Map<String, Object> map = message.getPayload();
+        if(!map.containsKey(MessagePayloadStandard.CALL_RESPONSE)) return null;
+        return (Boolean)map.get(MessagePayloadStandard.CALL_RESPONSE);
     }
 
     public Point extractPoint(RemoteMessage message) {
-        Map<String, String> map = message.getPayload();
-        if(!map.containsKey(MessagePayloadStandard.POINT_X) || !map.containsKey(MessagePayloadStandard.POINT_Y)) return null;
-        double x = Double.parseDouble(map.get(MessagePayloadStandard.POINT_X));
-        double y = Double.parseDouble(map.get(MessagePayloadStandard.POINT_Y));
+        Map<String, Object> map = message.getPayload();
+        if(!map.containsKey(MessagePayloadStandard.LATITUDE) || !map.containsKey(MessagePayloadStandard.LONGITUDE)) return null;
+        double x = (Double)map.get(MessagePayloadStandard.LATITUDE);
+        double y = (Double)map.get(MessagePayloadStandard.LONGITUDE);
         Point point = new Point(x, y);
         return point;
     }
 
     public String extractType(RemoteMessage message) {
-        Map<String, String> map = message.getPayload();
+        Map<String, Object> map = message.getPayload();
         if(!map.containsKey(MessagePayloadStandard.TYPE)) return null;
-        return map.get(MessagePayloadStandard.TYPE);
+        return (String)map.get(MessagePayloadStandard.TYPE);
     }
 
     public RemoteMessage putType(RemoteMessage message, String value) {
-        Map<String, String> map = message.getPayload();
+        Map<String, Object> map = message.getPayload();
         map.put(MessagePayloadStandard.TYPE, value);
         return message;
     }
 
     public String extractHostname(RemoteMessage message) {
-        Map<String, String> map = message.getPayload();
+        Map<String, Object> map = message.getPayload();
         if(!map.containsKey(MessagePayloadStandard.HOSTNAME)) return null;
-        return map.get(MessagePayloadStandard.HOSTNAME);
+        return (String)map.get(MessagePayloadStandard.HOSTNAME);
+    }
+
+    public String extractSender(RemoteMessage message) {
+        return message.getSender();
+    }
+
+    public String extractReceiver(RemoteMessage message) {
+        return message.getReceiver();
+    }
+
+    public Integer extractRadius(RemoteMessage message) {
+        Map<String, Object> map = message.getPayload();
+        if(!map.containsKey(MessagePayloadStandard.RADIUS)) return null;
+        return (Integer)map.get(MessagePayloadStandard.RADIUS);
+    }
+
+    public CallRequest extractCallRequest(RemoteMessage message) {
+        Map<String, Object> map = message.getPayload();
+        if(!map.containsKey(MessagePayloadStandard.START_LAT) || !map.containsKey(MessagePayloadStandard.START_LNG)
+                || !map.containsKey(MessagePayloadStandard.END_LAT)|| !map.containsKey(MessagePayloadStandard.END_LNG)) return null;
+        CallRequest val = new CallRequest();
+        val.setPassenger((String)map.get(MessagePayloadStandard.SENDER));
+        val.setStart(new Point((double)map.get(MessagePayloadStandard.START_LAT), (double)map.get(MessagePayloadStandard.START_LNG)));
+        val.setEnd(new Point((double)map.get(MessagePayloadStandard.END_LAT), (double)map.get(MessagePayloadStandard.END_LNG)));
+        return val;
     }
 }

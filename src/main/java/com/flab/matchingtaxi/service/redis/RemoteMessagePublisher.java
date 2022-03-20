@@ -14,8 +14,13 @@ public class RemoteMessagePublisher {
     @Autowired
     private RedisTemplate redisTemplate;
 
-    public void publish(ChannelTopic topic, RemoteMessage message){
-        redisTemplate.convertAndSend(topic.getTopic(), message);
-        log.info("publish message : " + message.toString());
+    public void publish_redis(ChannelTopic topic, RemoteMessage message){
+        try {
+            redisTemplate.convertAndSend(topic.getTopic(), message);
+            log.info("publish message : " + message.toString());
+        }catch (Exception e){
+            log.error(e.getMessage());
+            e.printStackTrace();
+        }
     }
 }

@@ -24,5 +24,5 @@ public class RemoteMessage{
     /**
      *  message contents
      */
-    private Map<String, String> payload;
+    private Map<String, Object> payload;
 }
