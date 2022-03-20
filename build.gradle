@@ -9,6 +9,7 @@ version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
 
 configurations {
+
 	compileOnly {
 		extendsFrom annotationProcessor
 	}
@@ -28,9 +29,11 @@ dependencies {
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok:1.18.8'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
-	runtimeOnly 'org.postgresql:postgresql'
 	runtimeOnly 'org.mariadb.jdbc:mariadb-java-client'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+// https://mvnrepository.com/artifact/com.google.geometry/s2-geometry
+	implementation group: 'com.google.geometry', name: 's2-geometry', version: '2.0.0'
 }
 
 test {
