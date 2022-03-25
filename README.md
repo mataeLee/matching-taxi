@@ -4,7 +4,7 @@ Documentation : [Notion](https://parallel-cornucopia-5d2.notion.site/Matching-Ta
    
 # 2. Collaboration
 - Git-flow 브랜치 전략 적용
-- pull-request 방식으로 코드리뷰
+- pull-request 요청을 코드리뷰 후에 merge
 
 ### git branch naming
 - 브랜치 타입 이슈 번호를 브랜치 이름의 prefix로 적용하고 뒤에 브랜치 이름을 연결한다.
