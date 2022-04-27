@@ -1,4 +1,4 @@
-# 1. Background
+# 1. Matching-Taxi
 ### 실시간 택시승차를 위한 승객-기사 매칭 서비스 프로젝트  
 Documentation : [Notion](https://parallel-cornucopia-5d2.notion.site/Matching-Taxi-fd95f9208c6c4b1b9d6f2bc0e013552d)
    
