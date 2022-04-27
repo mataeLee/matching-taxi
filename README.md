@@ -1,8 +1,8 @@
-# 1. Matching-Taxi
+# Matching-Taxi
 ### 실시간 택시승차를 위한 승객-기사 매칭 서비스 프로젝트  
 Documentation : [Notion](https://parallel-cornucopia-5d2.notion.site/Matching-Taxi-fd95f9208c6c4b1b9d6f2bc0e013552d)
    
-# 2. Collaboration
+# Collaboration
 - Git-flow 브랜치 전략 적용
 - pull-request 요청을 코드리뷰 후에 merge
 
